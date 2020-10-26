@@ -1,0 +1,38 @@
+extends ../layout
+
+block content
+
+    a(href='/bicicleta') Volver
+
+    br
+    br
+    br
+    h1 Actualizar Bicicleat
+
+    br
+    br
+    br
+
+    form(action='/bicicleta/update' method='post')
+        label(for='id') id:
+        br
+        input#id(type='text' name='id' value=bici.id)
+        br
+        label(for='color') Color:
+        br
+        input#color(type='text' name='color' value=bici.color)
+        br
+        label(for='modelo') Modelo:
+        br
+        input#modelo(type='text' name='modelo' value=bici.modelo)
+        br
+        label(for='latitud') Latitud:
+        br
+        input#latitud(type='text' name='latitud' value=bici.ubicacion[0])
+        br
+        label(for='longitud') Longitud:
+        br
+        input#longitud(type='text' name='longitud' value=bici.ubicacion[1])
+        br
+        br
+        input.btn(type="submit" value='Ok')

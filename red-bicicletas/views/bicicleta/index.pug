@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+
+  a(href='/bicicleta/create') Nueva bicicleta
+  table#customers
+    tr
+      th id
+      th Color
+      th Modelo
+      th Ubicacion
+      th 
+      th
+    each bici in bicis
+      tr
+        td= bici.id
+        td= bici.color
+        td= bici.modelo
+        td= bici.ubicacion
+        td 
+          a(href='/bicicleta/'+bici.id+'/update') Editar
+        td
+          form.inline(method='post' action='bicicleta/' + bici.id + '/remove')
+            input(type='hidden' name='id' value=bici.id)
+            button.link-button(type='submit' name='submit_param' value='submit_value' class='btn')
+              = 'Eliminar'
+
